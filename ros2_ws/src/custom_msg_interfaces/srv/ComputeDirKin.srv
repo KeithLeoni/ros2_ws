@@ -1,0 +1,13 @@
+# ComputeDirKin.srv
+
+# Request
+std_msgs/Header header
+float64[] joints
+string frame_id
+
+---
+# Response
+geometry_msgs/Pose final_pose
+string status_message
+string frame_id  
+

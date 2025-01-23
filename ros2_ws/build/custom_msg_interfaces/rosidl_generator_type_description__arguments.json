@@ -1,0 +1,11 @@
+{
+  "package_name": "custom_msg_interfaces",
+  "output_dir": "/home/ubuntu/ros2_ws/build/custom_msg_interfaces/rosidl_generator_type_description/custom_msg_interfaces",
+  "idl_tuples": [
+    "/home/ubuntu/ros2_ws/build/custom_msg_interfaces/rosidl_adapter/custom_msg_interfaces:msg/DetectionResult.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}

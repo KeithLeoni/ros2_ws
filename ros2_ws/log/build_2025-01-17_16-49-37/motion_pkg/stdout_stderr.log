@@ -1,0 +1,28 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o[0m
+[ 50%] [32m[1mLinking CXX static library libur5inverse.a[0m
+[ 50%] Built target ur5inverse
+[ 75%] [32mBuilding CXX object CMakeFiles/invKin.dir/src/invKin.cpp.o[0m
+[100%] [32m[1mLinking CXX executable invKin[0m
+[100%] Built target invKin
+-- Install configuration: ""
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin
+-- Set non-toolchain portion of runtime path of "/home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin" to ""
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/libur5inverse.a
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include/
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include//motion_pkg
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include//motion_pkg/ur5inverse.h
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/package_run_dependencies/motion_pkg
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/parent_prefix_path/motion_pkg
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.sh
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.dsv
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.bash
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.sh
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.zsh
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.dsv
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.dsv
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/packages/motion_pkg
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig.cmake
+-- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig-version.cmake
+-- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.xml

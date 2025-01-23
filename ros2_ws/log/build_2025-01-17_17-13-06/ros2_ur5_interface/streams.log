@@ -1,0 +1,68 @@
+[0.304s] Invoking command in '/home/ubuntu/ros2_ws/build/ros2_ur5_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/planning_pkg:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/motion_planning:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/ros2_ur5_interface -- -j20 -l20
+[0.375s] [ 25%] [32mBuilding CXX object CMakeFiles/publish_trajectory_node.dir/src/publish_trajectory_node.cpp.o[0m
+[0.378s] [ 75%] Built target gripper_service
+[10.967s] [100%] [32m[1mLinking CXX executable publish_trajectory_node[0m
+[11.425s] [100%] Built target publish_trajectory_node
+[11.437s] Invoked command in '/home/ubuntu/ros2_ws/build/ros2_ur5_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/planning_pkg:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/motion_planning:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/ros2_ur5_interface -- -j20 -l20
+[11.438s] Invoking command in '/home/ubuntu/ros2_ws/build/ros2_ur5_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/planning_pkg:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/motion_planning:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/ros2_ur5_interface
+[11.447s] -- Install configuration: ""
+[11.447s] -- Installing: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/lib/ros2_ur5_interface/publish_trajectory_node
+[11.455s] -- Set non-toolchain portion of runtime path of "/home/ubuntu/ros2_ws/install/ros2_ur5_interface/lib/ros2_ur5_interface/publish_trajectory_node" to ""
+[11.455s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/lib/ros2_ur5_interface/gripper_service
+[11.455s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/launch
+[11.455s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/launch/interface.launch.py
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/launch/sim.launch.py
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/config
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/config/ur_controllers.yaml
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/params
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/params/ur5_bridge.yaml
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/gripper
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/gripper/close.script
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/gripper/neutral_from_closed.script
+[11.456s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/gripper/open.script
+[11.457s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/gripper/neutral_from_open.script
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/worlds
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/worlds/empty.world
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/block.urdf.xacro
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/camera.sdf
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X2-Y2-Z2.stl
+[11.458s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y3-Z2.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y2-Z2-CHAMFER.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y4-Z1.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/link1.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y1-Z2.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y4-Z2.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y2-Z2-TWINFILLET.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y3-Z2-FILLET.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y2-Z1.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/desk.stl
+[11.459s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/link2.stl
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X2-Y2-Z2-FILLET.stl
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/base.stl
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/meshes/X1-Y2-Z2.stl
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/desk.urdf.xacro
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/desk.config
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/ur_gz.urdf.xacro
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/ur_gz.ros2_control.xacro
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/soft_robotics_gripper.xacro
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/models/block.config
+[11.460s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/rviz
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/rviz/ur5.rviz
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ament_index/resource_index/package_run_dependencies/ros2_ur5_interface
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ament_index/resource_index/parent_prefix_path/ros2_ur5_interface
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/environment/ament_prefix_path.sh
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/environment/ament_prefix_path.dsv
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/environment/path.sh
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/environment/path.dsv
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/local_setup.bash
+[11.461s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/local_setup.sh
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/local_setup.zsh
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/local_setup.dsv
+[11.462s] -- Installing: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/package.dsv
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ament_index/resource_index/packages/ros2_ur5_interface
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/cmake/ros2_ur5_interfaceConfig.cmake
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/cmake/ros2_ur5_interfaceConfig-version.cmake
+[11.462s] -- Up-to-date: /home/ubuntu/ros2_ws/install/ros2_ur5_interface/share/ros2_ur5_interface/package.xml
+[11.467s] Invoked command in '/home/ubuntu/ros2_ws/build/ros2_ur5_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/planning_pkg:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/motion_planning:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/ros2_ur5_interface

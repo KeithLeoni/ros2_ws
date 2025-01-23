@@ -1,0 +1,29 @@
+[0.022s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[0.275s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.303s] -- Found rclcpp: 28.1.6 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.341s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.350s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.360s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.373s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.446s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.448s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.555s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.653s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.665s] -- Found geometry_msgs: 5.3.5 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.680s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.712s] -- Found tf2_ros: 0.36.7 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[0.838s] -- Found tf2_geometry_msgs: 0.36.7 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[0.845s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.845s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.952s] -- Configuring done (0.9s)
+[0.967s] -- Generating done (0.0s)
+[0.971s] -- Build files have been written to: /home/ubuntu/ros2_ws/build/motion_pkg
+[1.019s] [ 25%] [32mBuilding CXX object CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o[0m
+[1.161s] [01m[K/home/ubuntu/ros2_ws/src/motion_pkg/src/ur5inverse.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kur5Inverse.h: No such file or directory
+[1.161s]     5 | #include [01;31m[K"ur5Inverse.h"[m[K
+[1.161s]       |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[1.162s] compilation terminated.
+[1.165s] gmake[2]: *** [CMakeFiles/ur5inverse.dir/build.make:76: CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o] Error 1
+[1.165s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ur5inverse.dir/all] Error 2
+[1.165s] gmake: *** [Makefile:146: all] Error 2
+[1.168s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20

@@ -1,0 +1,10 @@
+[0.024s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[0.315s] [ 25%] [32mBuilding CXX object CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o[0m
+[0.316s] [01m[K/home/ubuntu/ros2_ws/src/motion_pkg/src/ur5inverse.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kur5Inverse.h: No such file or directory
+[0.316s]     5 | #include [01;31m[K"ur5Inverse.h"[m[K
+[0.317s]       |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[0.317s] compilation terminated.
+[0.318s] gmake[2]: *** [CMakeFiles/ur5inverse.dir/build.make:76: CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o] Error 1
+[0.318s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ur5inverse.dir/all] Error 2
+[0.318s] gmake: *** [Makefile:146: all] Error 2
+[0.323s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20

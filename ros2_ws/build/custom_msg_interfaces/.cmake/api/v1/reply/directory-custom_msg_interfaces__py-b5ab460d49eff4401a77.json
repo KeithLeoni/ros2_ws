@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "custom_msg_interfaces__py",
+		"source" : "/home/ubuntu/ros2_ws/build/custom_msg_interfaces/custom_msg_interfaces__py"
+	}
+}

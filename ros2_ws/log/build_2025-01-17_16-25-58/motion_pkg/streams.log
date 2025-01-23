@@ -1,0 +1,44 @@
+[0.030s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[0.290s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.310s] -- Found rclcpp: 28.1.6 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.342s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.358s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.369s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.383s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.454s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.456s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.534s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.631s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.652s] -- Found geometry_msgs: 5.3.5 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.671s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.696s] -- Found tf2_ros: 0.36.7 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[0.832s] -- Found tf2_geometry_msgs: 0.36.7 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[0.835s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.837s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.937s] -- Configuring done (0.9s)
+[0.958s] -- Generating done (0.0s)
+[0.959s] -- Build files have been written to: /home/ubuntu/ros2_ws/build/motion_pkg
+[1.002s] [ 50%] [32mBuilding CXX object CMakeFiles/invKin.dir/src/invKin.cpp.o[0m
+[5.163s] [100%] [32m[1mLinking CXX executable invKin[0m
+[5.344s] [100%] Built target invKin
+[5.353s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[5.355s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/motion_pkg
+[5.363s] -- Install configuration: ""
+[5.364s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin
+[5.364s] -- Set non-toolchain portion of runtime path of "/home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin" to ""
+[5.364s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/package_run_dependencies/motion_pkg
+[5.365s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/parent_prefix_path/motion_pkg
+[5.365s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.sh
+[5.365s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.dsv
+[5.365s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.sh
+[5.365s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.dsv
+[5.365s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.bash
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.sh
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.zsh
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.dsv
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.dsv
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/packages/motion_pkg
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig.cmake
+[5.366s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig-version.cmake
+[5.366s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.xml
+[5.368s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/motion_pkg

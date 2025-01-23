@@ -1,0 +1,32 @@
+[0.019s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[0.291s] [ 25%] [32mBuilding CXX object CMakeFiles/ur5inverse.dir/src/ur5inverse.cpp.o[0m
+[2.070s] [ 50%] [32m[1mLinking CXX static library libur5inverse.a[0m
+[2.121s] [ 50%] Built target ur5inverse
+[2.156s] [ 75%] [32mBuilding CXX object CMakeFiles/invKin.dir/src/invKin.cpp.o[0m
+[7.452s] [100%] [32m[1mLinking CXX executable invKin[0m
+[7.659s] [100%] Built target invKin
+[7.670s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[7.671s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/motion_pkg
+[7.678s] -- Install configuration: ""
+[7.678s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin
+[7.679s] -- Set non-toolchain portion of runtime path of "/home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/invKin" to ""
+[7.680s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/lib/motion_pkg/libur5inverse.a
+[7.680s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include/
+[7.680s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include//motion_pkg
+[7.681s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/include//motion_pkg/ur5inverse.h
+[7.681s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/package_run_dependencies/motion_pkg
+[7.681s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/parent_prefix_path/motion_pkg
+[7.681s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.sh
+[7.682s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/ament_prefix_path.dsv
+[7.685s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.sh
+[7.686s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/environment/path.dsv
+[7.686s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.bash
+[7.687s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.sh
+[7.687s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.zsh
+[7.687s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/local_setup.dsv
+[7.687s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.dsv
+[7.688s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/ament_index/resource_index/packages/motion_pkg
+[7.688s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig.cmake
+[7.688s] -- Up-to-date: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/cmake/motion_pkgConfig-version.cmake
+[7.688s] -- Installing: /home/ubuntu/ros2_ws/install/motion_pkg/share/motion_pkg/package.xml
+[7.688s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/ros2_ws/build/motion_pkg

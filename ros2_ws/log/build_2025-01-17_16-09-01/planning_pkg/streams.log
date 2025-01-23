@@ -1,0 +1,35 @@
+[0.938s] Invoking command in '/home/ubuntu/ros2_ws/src/planning_pkg': PYTHONPATH=/home/ubuntu/ros2_ws/build/planning_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/planning_pkg build --build-base /home/ubuntu/ros2_ws/build/planning_pkg/build install --record /home/ubuntu/ros2_ws/build/planning_pkg/install.log --single-version-externally-managed install_data
+[1.261s] running egg_info
+[1.261s] creating ../../build/planning_pkg/planning_pkg.egg-info
+[1.280s] writing ../../build/planning_pkg/planning_pkg.egg-info/PKG-INFO
+[1.281s] writing dependency_links to ../../build/planning_pkg/planning_pkg.egg-info/dependency_links.txt
+[1.281s] writing requirements to ../../build/planning_pkg/planning_pkg.egg-info/requires.txt
+[1.281s] writing top-level names to ../../build/planning_pkg/planning_pkg.egg-info/top_level.txt
+[1.281s] writing manifest file '../../build/planning_pkg/planning_pkg.egg-info/SOURCES.txt'
+[1.326s] reading manifest file '../../build/planning_pkg/planning_pkg.egg-info/SOURCES.txt'
+[1.327s] writing manifest file '../../build/planning_pkg/planning_pkg.egg-info/SOURCES.txt'
+[1.327s] running build
+[1.327s] running build_py
+[1.327s] creating /home/ubuntu/ros2_ws/build/planning_pkg/build
+[1.327s] creating /home/ubuntu/ros2_ws/build/planning_pkg/build/lib
+[1.327s] creating /home/ubuntu/ros2_ws/build/planning_pkg/build/lib/planning_pkg
+[1.327s] copying planning_pkg/planning.py -> /home/ubuntu/ros2_ws/build/planning_pkg/build/lib/planning_pkg
+[1.327s] copying planning_pkg/__init__.py -> /home/ubuntu/ros2_ws/build/planning_pkg/build/lib/planning_pkg
+[1.327s] running install
+[1.333s] running install_lib
+[1.352s] creating /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg
+[1.352s] copying /home/ubuntu/ros2_ws/build/planning_pkg/build/lib/planning_pkg/planning.py -> /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg
+[1.353s] copying /home/ubuntu/ros2_ws/build/planning_pkg/build/lib/planning_pkg/__init__.py -> /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg
+[1.353s] byte-compiling /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg/planning.py to planning.cpython-312.pyc
+[1.354s] byte-compiling /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg/__init__.py to __init__.cpython-312.pyc
+[1.354s] running install_data
+[1.354s] creating /home/ubuntu/ros2_ws/install/planning_pkg/share/ament_index
+[1.354s] creating /home/ubuntu/ros2_ws/install/planning_pkg/share/ament_index/resource_index
+[1.354s] creating /home/ubuntu/ros2_ws/install/planning_pkg/share/ament_index/resource_index/packages
+[1.354s] copying resource/planning_pkg -> /home/ubuntu/ros2_ws/install/planning_pkg/share/ament_index/resource_index/packages
+[1.355s] copying package.xml -> /home/ubuntu/ros2_ws/install/planning_pkg/share/planning_pkg
+[1.355s] running install_egg_info
+[1.384s] Copying ../../build/planning_pkg/planning_pkg.egg-info to /home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages/planning_pkg-0.0.0-py3.12.egg-info
+[1.384s] running install_scripts
+[1.534s] writing list of installed files to '/home/ubuntu/ros2_ws/build/planning_pkg/install.log'
+[1.575s] Invoked command in '/home/ubuntu/ros2_ws/src/planning_pkg' returned '0': PYTHONPATH=/home/ubuntu/ros2_ws/build/planning_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/ros2_ws/install/planning_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/planning_pkg build --build-base /home/ubuntu/ros2_ws/build/planning_pkg/build install --record /home/ubuntu/ros2_ws/build/planning_pkg/install.log --single-version-externally-managed install_data

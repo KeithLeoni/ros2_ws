@@ -1,0 +1,10 @@
+[0.018s] Invoking command in '/home/ubuntu/ros2_ws/build/motion_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20
+[0.272s] [ 50%] [32mBuilding CXX object CMakeFiles/invKin.dir/src/invKin.cpp.o[0m
+[5.499s] [100%] [32m[1mLinking CXX executable invKin[0m
+[5.655s] /usr/bin/ld: CMakeFiles/invKin.dir/src/invKin.cpp.o: in function `InverseKinematicsNode::lookupTransform()':
+[5.655s] invKin.cpp:(.text._ZN21InverseKinematicsNode15lookupTransformEv[_ZN21InverseKinematicsNode15lookupTransformEv]+0x199): undefined reference to `ur5Inverse(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 3, 0, 3, 3> const&, double)'
+[5.667s] collect2: error: ld returned 1 exit status
+[5.668s] gmake[2]: *** [CMakeFiles/invKin.dir/build.make:209: invKin] Error 1
+[5.669s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/invKin.dir/all] Error 2
+[5.669s] gmake: *** [Makefile:146: all] Error 2
+[5.675s] Invoked command in '/home/ubuntu/ros2_ws/build/motion_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/motion_pkg -- -j20 -l20

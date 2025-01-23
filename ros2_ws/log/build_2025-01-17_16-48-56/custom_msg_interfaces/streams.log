@@ -1,0 +1,24 @@
+[0.023s] Invoking command in '/home/ubuntu/ros2_ws/build/custom_msg_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros2_ws/install/pose_estimator_pkg:/home/ubuntu/ros2_ws/install/planning_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/ros2_ws/build/custom_msg_interfaces -- -j20 -l20
+[0.319s] [  2%] Built target custom_msg_interfaces__rosidl_generator_type_description
+[0.319s] [  2%] Built target ament_cmake_python_copy_custom_msg_interfaces
+[0.319s] [  5%] Built target custom_msg_interfaces__cpp
+[0.319s] [ 20%] Built target custom_msg_interfaces__rosidl_generator_c
+[0.319s] [ 29%] Built target custom_msg_interfaces__rosidl_typesupport_c
+[0.320s] [ 38%] Built target custom_msg_interfaces__rosidl_typesupport_fastrtps_c
+[0.320s] [ 52%] Built target custom_msg_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.320s] [ 55%] Built target custom_msg_interfaces__rosidl_typesupport_cpp
+[0.320s] [ 64%] Built target custom_msg_interfaces__rosidl_typesupport_introspection_c
+[0.320s] [ 73%] Built target custom_msg_interfaces__rosidl_typesupport_introspection_cpp
+[0.320s] [ 73%] Built target custom_msg_interfaces
+[0.320s] [ 76%] Built target custom_msg_interfaces__py
+[0.320s] [ 82%] Built target custom_msg_interfaces__rosidl_generator_py
+[0.320s] [ 88%] Built target custom_msg_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.321s] [100%] Built target custom_msg_interfaces_s__rosidl_typesupport_introspection_c
+[0.321s] [100%] Built target custom_msg_interfaces_s__rosidl_typesupport_c
+[0.371s] running egg_info
+[0.391s] writing custom_msg_interfaces.egg-info/PKG-INFO
+[0.392s] writing dependency_links to custom_msg_interfaces.egg-info/dependency_links.txt
+[0.392s] writing top-level names to custom_msg_interfaces.egg-info/top_level.txt
+[0.462s] reading manifest file 'custom_msg_interfaces.egg-info/SOURCES.txt'
+[0.463s] writing manifest file 'custom_msg_interfaces.egg-info/SOURCES.txt'
+[0.497s] [100%] Built target ament_cmake_python_build_custom_msg_interfaces_egg

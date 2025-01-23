@@ -1,0 +1,8 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/invKin.dir/src/invKin.cpp.o[0m
+[100%] [32m[1mLinking CXX executable invKin[0m
+/usr/bin/ld: CMakeFiles/invKin.dir/src/invKin.cpp.o: in function `InverseKinematicsNode::lookupTransform()':
+invKin.cpp:(.text._ZN21InverseKinematicsNode15lookupTransformEv[_ZN21InverseKinematicsNode15lookupTransformEv]+0x199): undefined reference to `ur5Inverse(Eigen::Matrix<double, 3, 1, 0, 3, 1> const&, Eigen::Matrix<double, 3, 3, 0, 3, 3> const&, double)'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/invKin.dir/build.make:209: invKin] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/invKin.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
