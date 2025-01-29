@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'planning_node = planning_pkg.planning:main'
+            'planning_node = planning_pkg.planning:main',
+            'move_a_to_b_server = planning_pkg.move_a_to_b_server:main',
         ],
     },
 )
