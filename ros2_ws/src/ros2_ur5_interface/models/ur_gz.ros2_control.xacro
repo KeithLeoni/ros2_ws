@@ -7,7 +7,7 @@
     name
     tf_prefix
     transmission_hw_interface:=hardware_interface/PositionJointInterface
-    initial_positions:=${dict(shoulder_pan_joint=-1.60,shoulder_lift_joint=-1.72,elbow_joint=-2.20,wrist_1_joint=-0.81,wrist_2_joint=1.60,wrist_3_joint=-0.03)}
+    initial_positions:=${dict(shoulder_pan_joint=-1.60,shoulder_lift_joint=-1.72,elbow_joint=-2.20,wrist_1_joint=-0.81,wrist_2_joint=-1.60,wrist_3_joint=-0.03)}
     ">
 
     <!-- Add URDF transmission elements (for ros_control) -->

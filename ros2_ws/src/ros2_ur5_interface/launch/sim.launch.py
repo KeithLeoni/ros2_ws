@@ -1,3 +1,4 @@
+import math
 import os
 import subprocess
 import random
@@ -20,7 +21,9 @@ def spawn_block(context, *args, **kwargs):
     instances_cmds = []
 
     for block_number in block_numbers:
-        block_type = random.choice(block_types)
+        #block_type = random.choice(block_types)
+        block_type = block_types[int(block_number) - 1]
+        
         # Paths
         xacro_file = os.path.join(get_package_share_directory(package_name), 'models', 'block.urdf.xacro')
         urdf_file = os.path.join(get_package_share_directory(package_name), 'models', f'block_{block_number}.urdf')
@@ -93,29 +96,46 @@ def spawn_block(context, *args, **kwargs):
         y_min = 0.25
         y_max = 0.75
         
-        random_rotation = random.uniform(0, 45)
         
         # Generate random position within the desk limits 
-        x_pos = random.uniform(x_min, x_max) 
-        y_pos = random.uniform(y_min, y_max) 
-        z_pos = 0.88
-        spawn_block = Node( 
-            package='ros_gz_sim', 
-            executable='create', 
-            arguments=[ 
-                '-name', f"block_{block_number}", 
-                '-file', sdf_file, 
-                '-x', str(x_pos), 
-                '-y', str(y_pos), 
-                '-z', str(z_pos), 
-                '-R', '0',  # Nessuna rotazione su X
-                '-P', '0',  # Nessuna rotazione su Y
-                '-Y', '0'   # str(random_rotation),  # Rotazione casuale su Z
-    
-            ], 
-            output='screen', 
-        ) 
-        instances_cmds.append(spawn_block)
+        # x_pos = random.uniform(x_min, x_max) 
+        # y_pos = random.uniform(y_min, y_max) 
+        # z_pos = 0.88
+        #random_rotation = random.uniform(0, 45)
+
+        # Define desk zones for each block # keith version
+        zones = [
+            {'x_min': 0.05, 'x_max': 0.25, 'y_min': 0.25, 'y_max': 0.75},
+            {'x_min': 0.30, 'x_max': 0.50, 'y_min': 0.40, 'y_max': 0.75},
+            {'x_min': 0.55, 'x_max': 0.75, 'y_min': 0.25, 'y_max': 0.75}
+        ]
+
+        # Step 1: Select ONE random zone for all blocks
+        selected_zone = zones[2] #random.choice(zones)
+
+        # Step 2: Place all blocks randomly within this zone
+        for block_number in block_numbers:
+            # Generate a random position within the selected zone
+            x_pos = random.uniform(selected_zone['x_min'], selected_zone['x_max'])
+            y_pos = random.uniform(selected_zone['y_min'], selected_zone['y_max'])
+            z_pos = 0.88  # Fixed height
+
+            spawn_block = Node( 
+                package='ros_gz_sim', 
+                executable='create', 
+                arguments=[ 
+                    '-name', f"block_{block_number}", 
+                    '-file', sdf_file, 
+                    '-x', str(x_pos), 
+                    '-y', str(y_pos), 
+                    '-z', str(z_pos), 
+                    '-R', '0',  
+                    '-P', '0',  
+                    '-Y', str(math.pi/2)  # Fixed rotation on Z
+                ], 
+                output='screen', 
+            ) 
+            instances_cmds.append(spawn_block)
 
     return instances_cmds
 
