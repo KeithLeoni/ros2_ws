@@ -31,6 +31,7 @@ The planner node is responsible for creating the enviroment, deciding where each
 The vision node is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
 
 ## For more details see the report
+[Link to PDF](https://github.com/username/repository/raw/main/path/to/your/file.pdf)
 
 ---
 
