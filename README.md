@@ -4,9 +4,10 @@
 This is the official repository for the **Robotics Project 2025**. The project focuses on creating code for the movement of a robotic arm and allows us to identify and manipulate block of different types, placing them in designated locations regardless of their initial orientation.
 
 ## Authors
-- @lucahardonk
-- @NickLech
-- @KeithLeoni
+- [![lucahardonk](https://github.com/lucahardonk.png)](https://github.com/lucahardonk) 
+- [![NickLech](https://github.com/NickLech.png)](https://github.com/NickLech)  
+- [![KeithLeoni](https://github.com/KeithLeoni.png)](https://github.com/KeithLeoni)  
+
 
 ---
 
