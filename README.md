@@ -4,7 +4,9 @@
 This is the official repository for the **Robotics Project 2025**. The project focuses on creating code for the movement of a robotic arm and allows us to identify and manipulate block of different types, placing them in designated locations regardless of their initial orientation.
 
 ## Authors
-- 
+- @lucahardonk
+- @NickLech
+- @KeithLeoni
 
 ---
 
@@ -26,11 +28,18 @@ The planner node is responsible for creating the enviroment, deciding where each
 ## Vision node
 The vision node is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
 
+## For more details see the report
 
 ---
 
 ## Installation
+---
+## Prerequisites
+- **Docker**: Ensure Docker is installed and running on your system.
+- **Docker Network Setup**: Create a Docker network named `ursim_net` before running the containers:
+  ```bash
+  docker network create --subnet=192.168.56.0/24 ursim_net
+  ```
 
-### Requirements
--
+
 
