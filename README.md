@@ -61,6 +61,8 @@ Run the following command to start the robot system:
 ros2 launch arm_bringup bringup_launch.py
 ```
 
+### 2. Run the planning node
+
 Once the system is up and running, you can launch the planning node. This will allow the robot to perform the necessary planning operations.
 
 ```bash
