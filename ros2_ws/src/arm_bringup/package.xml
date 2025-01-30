@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>arm_bringup</name>
+  <version>0.0.1</version>
+  <description>Bringup package to launch the full robot stack</description>
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <license>Apache License 2.0</license>
+
+  <depend>ros2launch</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+
+  <depend>ros2_ur5_interface</depend>
+  <depend>pose_estimator_pkg</depend>
+  <depend>motion_pkg</depend>
+  <depend>planning_pkg</depend>
+  <depend>collision_detection_pkg</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+

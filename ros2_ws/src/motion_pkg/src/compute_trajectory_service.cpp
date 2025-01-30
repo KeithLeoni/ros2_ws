@@ -5,8 +5,7 @@
 #include <trajectory_msgs/msg/joint_trajectory_point.hpp>
 #include <custom_msg_interfaces/srv/compute_trajectory.hpp>
 #include <custom_msg_interfaces/srv/compute_ik.hpp>
-#include <Eigen/Dense>
-#include <functional>
+
 
 #include <vector>
 #include <array>
@@ -15,6 +14,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>  // For std::isnan
+#include <iostream>
 #include <Eigen/Dense>
 using namespace std::chrono_literals;  
 
@@ -53,89 +53,7 @@ std::array<double, 4> compute_cubic_coefficients(double q0, double q1,
 }
 
 // ---------------------------------------------------------------------------
-// 4) Jacobian
-// Function to calculate the Jacobian matrix of the UR5 robot
-// ---------------------------------------------------------------------------
-
-bool ur5_singAvoid( Eigen::VectorXd& Th, double scaleFactor) {
-    // Parameters of the robot
-    Eigen::VectorXd A(6);
-    A << 0, -0.425, -0.3922, 0, 0, 0;
-    A *= scaleFactor;
-
-      bool singularity = false;
-
-    Eigen::VectorXd D(6);
-    D << 0.1625, 0, 0, 0.1333, 0.0997, 0.0996;
-    D *= scaleFactor;
-
-    //double A1 = A(0), A2 = A(1), A3 = A(2), A4 = A(3), A5 = A(4), A6 = A(5);
-    /double D1 = D(0), D2 = D(1), D3 = D(2), D4 = D(3), D5 = D(4), D6 = D(5);
-
-    // joint angles
-    //double th1 = Th(0), th2 = Th(1), th3 = Th(2), th4 = Th(3), th5 = Th(4), th6 = Th(5);
-
-    // calculates the columns of the Jacobian
-    Eigen::VectorXd J1(6), J2(6), J3(6), J4(6), J5(6), J6(6);
-
-    J1 << D5 * (cos(th1) * cos(th5) + cos(th2 + th3 + th4) * sin(th1) * sin(th5)) + D4 * cos(th1) - A2 * cos(th2) * sin(th1) - D5 * sin(th2 + th3 + th4) * sin(th1) - A3 * cos(th2) * cos(th3) * sin(th1) + A3 * sin(th1) * sin(th2) * sin(th3),
-          D5 * (cos(th5) * sin(th1) - cos(th2 + th3 + th4) * cos(th1) * sin(th5)) + D4 * sin(th1) + A2 * cos(th1) * cos(th2) + D5 * sin(th2 + th3 + th4) * cos(th1) + A3 * cos(th1) * cos(th2) * cos(th3) - A3 * cos(th1) * sin(th2) * sin(th3),
-          0,
-          0,
-          0,
-          1;
-
-    J2 << -cos(th1) * (A3 * sin(th2 + th3) + A2 * sin(th2) + D5 * (sin(th2 + th3) * sin(th4) - cos(th2 + th3) * cos(th4)) - D5 * sin(th5) * (cos(th2 + th3) * sin(th4) + sin(th2 + th3) * cos(th4))),
-          -sin(th1) * (A3 * sin(th2 + th3) + A2 * sin(th2) + D5 * (sin(th2 + th3) * sin(th4) - cos(th2 + th3) * cos(th4)) - D5 * sin(th5) * (cos(th2 + th3) * sin(th4) + sin(th2 + th3) * cos(th4))),
-          A3 * cos(th2 + th3) - (D5 * sin(th2 + th3 + th4 + th5)) / 2 + A2 * cos(th2) + (D5 * sin(th2 + th3 + th4 - th5)) / 2 + D5 * sin(th2 + th3 + th4),
-          sin(th1),
-          -cos(th1),
-          0;
-
-    J3 << cos(th1) * (D5 * cos(th2 + th3 + th4) - A3 * sin(th2 + th3) + D5 * sin(th2 + th3 + th4) * sin(th5)),
-          sin(th1) * (D5 * cos(th2 + th3 + th4) - A3 * sin(th2 + th3) + D5 * sin(th2 + th3 + th4) * sin(th5)),
-          A3 * cos(th2 + th3) - (D5 * sin(th2 + th3 + th4 + th5)) / 2 + (D5 * sin(th2 + th3 + th4 - th5)) / 2 + D5 * sin(th2 + th3 + th4),
-          sin(th1),
-          -cos(th1),
-          0;
-
-    J4 << D5 * cos(th1) * (cos(th2 + th3 + th4) + sin(th2 + th3 + th4) * sin(th5)),
-          D5 * sin(th1) * (cos(th2 + th3 + th4) + sin(th2 + th3 + th4) * sin(th5)),
-          D5 * (sin(th2 + th3 + th4 - th5) / 2 + sin(th2 + th3 + th4) - sin(th2 + th3 + th4 + th5) / 2),
-          sin(th1),
-          -cos(th1),
-          0;
-
-    J5 << D5 * cos(th1) * cos(th2) * cos(th5) * sin(th3) * sin(th4) - D5 * cos(th1) * cos(th2) * cos(th3) * cos(th4) * cos(th5) - D5 * sin(th1) * sin(th5) + D5 * cos(th1) * cos(th3) * cos(th5) * sin(th2) * sin(th4) + D5 * cos(th1) * cos(th4) * cos(th5) * sin(th2) * sin(th3),
-          D5 * cos(th1) * sin(th5) + D5 * cos(th2) * cos(th5) * sin(th1) * sin(th3) * sin(th4) + D5 * cos(th3) * cos(th5) * sin(th1) * sin(th2) * sin(th4) + D5 * cos(th4) * cos(th5) * sin(th1) * sin(th2) * sin(th3) - D5 * cos(th2) * cos(th3) * cos(th4) * cos(th5) * sin(th1),
-          -D5 * (sin(th2 + th3 + th4 - th5) / 2 + sin(th2 + th3 + th4 + th5) / 2),
-          sin(th2 + th3 + th4) * cos(th1),
-          sin(th2 + th3 + th4) * sin(th1),
-          -cos(th2 + th3 + th4);
-
-    J6 << 0,
-          0,
-          0,
-          cos(th5) * sin(th1) - cos(th2 + th3 + th4) * cos(th1) * sin(th5),
-          -cos(th1) * cos(th5) - cos(th2 + th3 + th4) * sin(th1) * sin(th5),
-          -sin(th2 + th3 + th4) * sin(th5);
-
-    // Jacobiano complete
-    Eigen::MatrixXd J(6, 6);
-    J << J1, J2, J3, J4, J5, J6;
-
-      double determinant = J.determinant();
-      if (std::abs(determinant) < 1e-5) {
-            std::cout << "Near a singularity! Determinant: " << determinant << std::endl;
-            singularity = true;
-      }
-
-      return singularity;
-
-}
-
-// ---------------------------------------------------------------------------
-// 5) Generate a Smooth Trajectory Using Cubic Interpolation
+// 4) Generate a Smooth Trajectory Using Cubic Interpolation
 //    Takes the global waypoints (N+1 or however many) and a segment_time
 //    for each segment, returns a JointTrajectory with interpolation
 // ---------------------------------------------------------------------------
@@ -216,7 +134,7 @@ trajectory_msgs::msg::JointTrajectory generate_cubic_trajectory(
 
 
 // ---------------------------------------------------------------------------
-// 6) The Node Class for "compute_trajectory_service"
+// 5) The Node Class for "compute_trajectory_service"
 // ---------------------------------------------------------------------------
 class ComputeTrajectoryService : public rclcpp::Node {
 public:
@@ -298,7 +216,7 @@ private:
             oss << JOINT_NAMES[i] << ": " << initial_joint_array_[i];
             if (i < JOINT_NAMES.size() - 1) oss << " | ";
         }
-        RCLCPP_INFO(this->get_logger(), "Updated joint states:\n%s", oss.str().c_str());
+        //RCLCPP_INFO(this->get_logger(), "Updated joint states:\n%s", oss.str().c_str());
     }
 
 
@@ -323,21 +241,6 @@ private:
             double penalty = 0.0;
             bool valid = true;
 
-            // Creazione del vettore Eigen per la configurazione attuale
-            Eigen::VectorXd candidate_joints(6);
-            for (size_t j = 0; j < 6; ++j) {
-                candidate_joints(j) = joint_angles_matrix[i * 6 + j];
-            }
-
-            // Controllo se la configurazione è singolare
-            if (ur5_singAvoid(candidate_joints, 1.0)) {
-                RCLCPP_WARN(rclcpp::get_logger("select_closest_one"),
-                            "IK Solution %zu is in singular position and will be ignored", i);
-                valid = false;
-                break;
-            }
-
-
             for (size_t j = 0; j < 6; ++j) {
                 double joint_angle = joint_angles_matrix[i * 6 + j];
 
@@ -359,7 +262,7 @@ private:
             // Skip invalid configurations
             if (!valid) {
                 RCLCPP_WARN(this->get_logger(),
-                            "Configuration %zu contains NaN values or singula configurations and will be skipped.", i);
+                            "Configuration %zu contains NaN values and will be skipped.", i);
                 continue;
             }
 
@@ -381,8 +284,96 @@ private:
         return best_solution;
     }
 
+    //define the function to check for singularities
+    bool ur5_singAvoid(const Eigen::VectorXd &Th, double scaleFactor)
+    {
+        // 1) Compute all transforms T0->i (i=0..6)
+        std::vector<Eigen::Matrix4d> Tm = computeChainFK(Th, scaleFactor);
+
+        // 2) Initialize a 6x6 Jacobian
+        Eigen::Matrix<double, 6, 6> J;
+        J.setZero();
+
+        // 3) The end-effector origin in base frame
+        Eigen::Vector3d o_6 = Tm[6].block<3,1>(0,3);
+
+        // For each joint i in [1..6]:
+        for (int i = 1; i <= 6; ++i)
+        {
+            // z_{i-1} is the third column of Tm[i-1]'s rotation part
+            Eigen::Vector3d z_im1 = Tm[i-1].block<3,3>(0,0).col(2);
+
+            // o_{i-1} is the translation part
+            Eigen::Vector3d o_im1 = Tm[i-1].block<3,1>(0,3);
+
+            // Linear part: z_{i-1} x (o_6 - o_{i-1})
+            Eigen::Vector3d linPart = z_im1.cross(o_6 - o_im1);
+
+            // Angular part: z_{i-1}
+            Eigen::Vector3d angPart = z_im1;
+
+            // Place into the i-th column (0-based => J.col(i-1))
+            J.block<3,1>(0, i-1) = linPart;
+            J.block<3,1>(3, i-1) = angPart;
+        }
+
+        // 4) Check determinant for singularity
+        double detJ = J.determinant();
+        if (std::fabs(detJ) < 1e-5) {
+            RCLCPP_WARN(rclcpp::get_logger("ur5_singAvoid"),
+                        "Near a singularity! Determinant: %f", detJ);
+            return true;
+        }
+
+        // Optionally, you could do SVD and check the smallest singular value:
+        // double minSv = J.jacobiSvd().singularValues().minCoeff();
+        // if (minSv < 1e-4) ...
+        //     ...
+
+        return false;
+    }
+    // A small helper for one DH transform: from frame i to i+1
+    Eigen::Matrix4d Tij(double theta, double alpha, double d, double a)
+    {
+        Eigen::Matrix4d T = Eigen::Matrix4d::Identity();
+        T <<  std::cos(theta), -std::sin(theta)*std::cos(alpha),  std::sin(theta)*std::sin(alpha),  a*std::cos(theta),
+            std::sin(theta),  std::cos(theta)*std::cos(alpha), -std::cos(theta)*std::sin(alpha),  a*std::sin(theta),
+            0,                std::sin(alpha),                  std::cos(alpha),                  d,
+            0,                0,                                0,                                1;
+        return T;
+    }
+
+    // Computes base->link i for each i, i.e. Tm[i]
+    std::vector<Eigen::Matrix4d> computeChainFK(const Eigen::VectorXd &Th, double scaleFactor)
+    {
+        // UR5 DH parameters (typical) ...
+        //  NOTE: May need sign adjustments or tweaks to match your UR5 definition.
+        std::vector<double> A = {0,     -0.425,  -0.3922,  0,     0,     0};
+        std::vector<double> D = {0.1625, 0,       0,        0.1333,0.0997,0.0996};
+        std::vector<double> ALPHA = {M_PI/2, 0, 0, M_PI/2, -M_PI/2, 0};
+
+        // Scale if desired
+        for (auto &a : A) a *= scaleFactor;
+        for (auto &d : D) d *= scaleFactor;
+
+        // Initialize array of transforms T0->i for i=0..6
+        std::vector<Eigen::Matrix4d> Tm(7, Eigen::Matrix4d::Identity());
+        // Tm[0] = Identity (base frame)
+
+        // Multiply each successive transform
+        for (int i=0; i<6; ++i) {
+            Eigen::Matrix4d Ti = Tij(Th(i), ALPHA[i], D[i], A[i]);
+            Tm[i+1] = Tm[i] * Ti;  // T0->i+1 = T0->i * Ti
+        }
+
+        // Now Tm[6] = T0->6 is the final end-effector
+        return Tm;
+    }
+
+
+
     // ---------------------------------------------------------------------------
-    // 7) The Service Callback: computes waypoints, then generates a cubic trajectory
+    // 6) The Service Callback: computes waypoints, then generates a cubic trajectory
     // ---------------------------------------------------------------------------
     void compute_trajectory_callback(
         const std::shared_ptr<custom_msg_interfaces::srv::ComputeTrajectory::Request> request,
@@ -451,6 +442,14 @@ private:
                     std::vector<double> best_solution =
                         select_closest_one(prev_joints, result->joint_angles_matrix.data);
 
+                    Eigen::VectorXd Th = Eigen::VectorXd::Map(best_solution.data(), best_solution.size());
+
+                    // Check for singularity using ROS2 logging
+                    if (ur5_singAvoid(Th, 1.0)) {
+                        RCLCPP_WARN(rclcpp::get_logger("compute_trajectory_service"), "Selected joint configuration is near a singularity!");
+                        // You can take additional action here, like selecting an alternative solution
+                    }
+
                     // Store in row i+1
                     for (size_t j = 0; j < 6; ++j) {
                         waypoints[i + 1][j] = best_solution[j];
@@ -473,7 +472,7 @@ private:
         }
 
         // -----------------------------------------------------------------------
-        // 8) Now Generate a Real Trajectory from Those Waypoints (Cubic Spline)
+        // 7) Now Generate a Real Trajectory from Those Waypoints (Cubic Spline)
         // -----------------------------------------------------------------------
         double segment_time = 1.0; // [seconds] for each segment, adjust as needed
         trajectory_msgs::msg::JointTrajectory cubic_traj =
@@ -485,10 +484,8 @@ private:
     }
 };
 
-
-
 // ---------------------------------------------------------------------------
-// 9) main(): spin the node
+// 8) main(): spin the node
 // ---------------------------------------------------------------------------
 int main(int argc, char ** argv)
 {

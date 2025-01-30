@@ -18,9 +18,9 @@ class BlockFramePublisher(Node):
             "block1_position": (0.45, 0.1, 0.9),
             "block2_position": (0.45, -0.1, 0.9),
             "block3_position": (0.45, -0.3, 0.9),
-            "block1_grapsing": (0.45, 0.1, 0.70),
-            "block2_grapsing": (0.45, -0.1, 0.70),
-            "block3_grapsing": (0.45, -0.3, 0.70),
+            "block1_grasping": (0.45, 0.1, 0.70),
+            "block2_grasping": (0.45, -0.1, 0.70),
+            "block3_grasping": (0.45, -0.3, 0.70),
             "block1_safe_plane": (0.45, 0.1, 0.5),
             "block2_safe_plane": (0.45, -0.1, 0.5),
             "block3_safe_plane": (0.45, -0.3, 0.5),
@@ -31,9 +31,9 @@ class BlockFramePublisher(Node):
             "block1_position": (1.0, 0.0, 0.0, 0.0),
             "block2_position": (1.0, 0.0, 0.0, 0.0),
             "block3_position": (1.0, 0.0, 0.0, 0.0),
-            "block1_grapsing": (0.0, 0.0, 0.0, 1.0),
-            "block2_grapsing": (0.0, 0.0, 0.0, 1.0),
-            "block3_grapsing": (0.0, 0.0, 0.0, 1.0),
+            "block1_grasping": (0.0, 0.0, 0.0, 1.0),
+            "block2_grasping": (0.0, 0.0, 0.0, 1.0),
+            "block3_grasping": (0.0, 0.0, 0.0, 1.0),
             "block1_safe_plane": (0.0, 0.0, 0.0, 1.0),
             "block2_safe_plane": (0.0, 0.0, 0.0, 1.0),
             "block3_safe_plane": (0.0, 0.0, 0.0, 1.0),
@@ -65,7 +65,7 @@ class BlockFramePublisher(Node):
             # Publish transform
             self.tf_broadcaster.sendTransform(transform)
 
-        self.get_logger().info("Published 3 block transforms relative to 'base'")
+        #self.get_logger().info("Published 3 block transforms relative to 'base'")
 
 def main(args=None):
     rclpy.init(args=args)
