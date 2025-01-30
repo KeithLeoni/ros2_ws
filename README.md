@@ -35,13 +35,36 @@ The vision node is responsible for detecting the blocks in the simulation, it's 
 ---
 
 ## Installation
----
-## Prerequisites
-- **Docker**: Ensure Docker is installed and running on your system.
-- **Docker Network Setup**: Create a Docker network named `ursim_net` before running the containers:
-  ```bash
-  docker network create --subnet=192.168.56.0/24 ursim_net
-  ```
 
+Before starting the simulation, make sure you have the repository downloaded to your workspace. To do this, clone the repository with the following command:
+
+```bash
+git clone https://github.com/KeithLeoni/ros2_ws.git
+```
+
+Navigate inside the directory
+```bash
+cd ros2_ws
+```
+
+## Starting the Simulation
+
+Follow the steps below to launch and control the robot simulation.
+
+### 1. Launch the Robot Nodes and Services
+
+Before anything else, you need to launch the required nodes and services that bring up the robot's system. This will initialize all necessary components and services.
+
+Run the following command to start the robot system:
+
+```bash
+ros2 launch arm_bringup bringup_launch.py
+```
+
+Once the system is up and running, you can launch the planning node. This will allow the robot to perform the necessary planning operations.
+
+```bash
+ros2 run planning_pkg planning_node
+```
 
 
