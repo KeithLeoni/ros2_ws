@@ -1,9 +1,11 @@
 # RoboticsProject
 
-[![Watch the video](https://img.youtube.com/vi/AHXESDaahys/maxresdefault.jpg)](https://www.youtube.com/watch?v=AHXESDaahys&ab_channel=LucaHardonk)
+[![Watch the video](https://img.youtube.com/vi/https://youtu.be/Xyv_HV6b0RQ/default.jpg)](https://youtu.be/Xyv_HV6b0RQ)
+
+
 
 ## Other videos
-[Watch the video](https://youtu.be/Xyv_HV6b0RQ)
+[Watch the video](https://www.youtube.com/watch?v=AHXESDaahys&ab_channel=LucaHardonk)
 
 [Watch the video](https://youtu.be/5d4sLjeiZd0)
 
