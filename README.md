@@ -1,4 +1,4 @@
-# RoboticsProject
+# Robotics Project
 
 [![Watch the video](https://img.youtube.com/vi/5d4sLjeiZd0/sddefault.jpg)](https://youtu.be/5d4sLjeiZd0)
 
