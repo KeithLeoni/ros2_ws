@@ -25,8 +25,10 @@ setup(
         'console_scripts': [
             'pt_inference_node = pose_estimator_pkg.pt_inference_node:main',
             'visualization_node = pose_estimator_pkg.visualization_node:main',
+            'pose_estimator_node = pose_estimator_pkg.pose_estimator:main',
             'icp_pose_estimator_node = pose_estimator_pkg.icp_pose_estimator:main',
             'detection_result_republisher = pose_estimator_pkg.detection_result_republisher:main',
         ],
     },
 )
+

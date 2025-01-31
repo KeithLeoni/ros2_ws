@@ -8,8 +8,9 @@
   <license>TODO: License declaration</license>
 
   <!-- Core dependencies -->
-  <depend>rclpy</depend>
-  <depend>std_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
   <depend>custom_msg_interfaces</depend>
 
   <!-- Build dependencies for custom messages -->

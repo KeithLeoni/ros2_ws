@@ -19,8 +19,8 @@ def generate_launch_description():
         # Add the icp_pose_estimator_node node
         Node(
             package='pose_estimator_pkg',
-            executable='icp_pose_estimator_node',
-            name='icp_pose_estimator_node',
+            executable='pose_estimator_node',
+            name='pose_estimator_node',
             output='screen'
         ),
         
@@ -30,5 +30,6 @@ def generate_launch_description():
             executable='detection_result_republisher',
             name='detection_result_republisher',
             output='screen'
-        )
+        ),
+        
     ])
