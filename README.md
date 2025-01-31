@@ -24,7 +24,7 @@ This project has been developed for the course **Introduction to Robotics** at t
 
 ### Key Features:
 - **Block Recognition**: Identify and classify 10 different types of blocks, even if flipped or placed on their sides.
-- **Task Execution**: Move and stack blocks to create hardcoded structures like castles or towers.
+- **Task Execution**: Picking up blocks from their starting positions and placing them in predefined final positions.
 ---
 
 # Documentation
@@ -32,7 +32,7 @@ This project has been developed for the course **Introduction to Robotics** at t
 The move node is responsible for moving the robot in the simulation, it's written in C++ and it's responsible for computing the actual movement of the robot, while also checking the presence of singularities.
 
 ## Planning node
-The planning node is responsible for creating the enviroment, deciding where each block has to be positioned and plann the path of the robot.
+The planning node handles a detection result, computes the sequence of poses for the robot to follow, and executes the planned poses while managing transformations and gripper operations.
 
 ## Vision node
 The vision node is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
