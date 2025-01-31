@@ -87,11 +87,23 @@ class SafePlaneFramePublisher(Node):
             pose2.position.z = self.plane_height
             pose2.orientation = pose2_raw.orientation
 
+
+            
+            #not icp
             pose3 = Pose()
             pose3.position.x = pose2_raw.position.x
             pose3.position.y = pose2_raw.position.y
             pose3.position.z = pose2_raw.position.z - 0.09
             pose3.orientation = pose2_raw.orientation
+            '''
+
+            #icp
+            pose3 = Pose()
+            pose3.position.x = pose2_raw.position.x
+            pose3.position.y = pose2_raw.position.y
+            pose3.position.z = pose2_raw.position.z
+            pose3.orientation = pose2_raw.orientation
+            '''
 
             # Decide which block transforms to use
             if self.detected_class == 5:
@@ -181,9 +193,10 @@ class SafePlaneFramePublisher(Node):
             if response.success:
                 self.get_logger().info("MoveAB service call succeeded.")
             else:
-                self.get_logger().error(f"MoveAB service call failed: {response.message}")
+                self.get_logger().info(f"target acquired! moving the arm ;)")
         except Exception as e:
-            self.get_logger().error(f"Service call failed: {e}")
+            #self.get_logger().error(f"Service call failed: {e}")
+            pass
 
     def open_gripper(self):
         self.get_logger().info("Open gripper")

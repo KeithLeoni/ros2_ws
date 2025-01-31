@@ -102,3 +102,29 @@ ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
 
 ENV USER ubuntu
 ENV PASSWD ubuntu
+
+# If you want "ubuntu" user to own it:
+RUN chown -R ubuntu:ubuntu /home/ubuntu/ros2_ws
+
+#
+# --- BUILD STEPS INSIDE THE CONTAINER ---
+#
+
+# Switch to the ubuntu user for building (optional):
+USER ubuntu
+WORKDIR /home/ubuntu/ros2_ws
+
+# Clear build artifacts and then run colcon build.
+# Note the 'source /opt/ros/$ROS_DISTRO/setup.bash' so the build environment is set up properly.
+RUN /bin/bash -c "\
+    rm -rf build/ install/ log/ && \
+    source /opt/ros/$ROS_DISTRO/setup.bash && \
+    colcon build \
+"
+
+#
+# ENTRYPOINT
+#
+COPY ./entrypoint.sh /
+USER root  # If entrypoint needs root, or switch back to ubuntu if desired
+ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]

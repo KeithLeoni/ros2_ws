@@ -10,6 +10,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 include_directories(
   include
@@ -17,7 +19,7 @@ include_directories(
 )
 
 add_executable(table_avoidance_node src/table_avoidance_node.cpp)
-ament_target_dependencies(table_avoidance_node rclcpp std_msgs Eigen3)
+ament_target_dependencies(table_avoidance_node rclcpp std_msgs Eigen3 tf2 tf2_ros)
 
 install(TARGETS
   table_avoidance_node

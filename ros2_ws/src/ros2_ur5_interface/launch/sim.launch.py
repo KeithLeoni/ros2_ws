@@ -16,6 +16,7 @@ package_name = 'ros2_ur5_interface'
 
 def spawn_block(context, *args, **kwargs):
     block_numbers = ["1", "2", "3"]  # Add more block numbers as needed
+    #block_numbers = ["1"] # for testing
     block_types = ["X1-Y1-Z2", "X1-Y2-Z2", "X1-Y4-Z2", "X1-Y2-Z1", "X1-Y3-Z2-FILLET", "X2-Y2-Z2-FILLET", "X1-Y2-Z2-CHAMFER", "X1-Y3-Z2", "X2-Y2-Z2", "X1-Y2-Z2-TWINFILLET", "X1-Y4-Z1"]
     
     instances_cmds = []
@@ -105,7 +106,7 @@ def spawn_block(context, *args, **kwargs):
 
         # Define desk zones for each block # keith version
         zones = [
-            {'x_min': 0.05, 'x_max': 0.25, 'y_min': 0.25, 'y_max': 0.75},
+            {'x_min': 0.05, 'x_max': 0.25, 'y_min': 0.4, 'y_max': 0.75},
             {'x_min': 0.30, 'x_max': 0.50, 'y_min': 0.40, 'y_max': 0.75},
             {'x_min': 0.55, 'x_max': 0.75, 'y_min': 0.25, 'y_max': 0.75}
         ]

@@ -101,7 +101,7 @@ trajectory_msgs::msg::JointTrajectory generate_cubic_trajectory(
         }
 
         // Generate interpolated points
-        int steps = 100;
+        int steps = 80;
         for (int step = 0; step <= steps; ++step) {
             double t = (step / static_cast<double>(steps)) * segment_time;
             trajectory_msgs::msg::JointTrajectoryPoint interpolated_point;
@@ -447,7 +447,8 @@ private:
                     // Check for singularity using ROS2 logging
                     if (ur5_singAvoid(Th, 1.0)) {
                         RCLCPP_WARN(rclcpp::get_logger("compute_trajectory_service"), "Selected joint configuration is near a singularity!");
-                        // You can take additional action here, like selecting an alternative solution
+                        std::fill(best_solution.begin(), best_solution.end(), std::numeric_limits<double>::quiet_NaN());
+                        //this will stop the trajecotry generation and thus the robot
                     }
 
                     // Store in row i+1
@@ -474,7 +475,7 @@ private:
         // -----------------------------------------------------------------------
         // 7) Now Generate a Real Trajectory from Those Waypoints (Cubic Spline)
         // -----------------------------------------------------------------------
-        double segment_time = 1.0; // [seconds] for each segment, adjust as needed
+        double segment_time = 0.8; // [seconds] for each segment, adjust as needed
         trajectory_msgs::msg::JointTrajectory cubic_traj =
             generate_cubic_trajectory(waypoints, segment_time);
 

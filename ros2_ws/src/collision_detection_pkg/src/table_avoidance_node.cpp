@@ -1,46 +1,89 @@
+#include <memory>
 #include <rclcpp/rclcpp.hpp>
-#include <Eigen/Dense>
-#include "std_msgs/msg/float64.hpp"
+
+// TF2
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/transform_listener.h>
+#include <tf2/LinearMath/Transform.h>
+#include <tf2/exceptions.h>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+
+// Standard messages
 #include "std_msgs/msg/bool.hpp"
 
-// This node checks that the height of the ee is above a threshold to avoid collision
-class EndEffectorHeightChecker : public rclcpp::Node {
+using namespace std::chrono_literals;
+
+class EndEffectorHeightChecker : public rclcpp::Node
+{
 public:
-    EndEffectorHeightChecker() : Node("end_effector_height_checker") {
-        // Subscription to the "end_effector_position" topic, when ee position changes the function topic_callback checks the height
-        subscription_ = this->create_subscription<std_msgs::msg::Float64>("end_effector_position", 10,
-            std::bind(&EndEffectorHeightChecker::topic_callback, this, std::placeholders::_1));
-        // It also publishes on a "shutdown" topic to signal the other node to shutdown when the ee is too low
-        publisher_ = this->create_publisher<std_msgs::msg::Bool>("shutdown", 10);
-    }
+  EndEffectorHeightChecker()
+  : Node("end_effector_height_checker"),
+    tf_buffer_(this->get_clock()),
+    tf_listener_(tf_buffer_)
+  {
+    // Create a publisher to publish shutdown signals
+    shutdown_pub_ = this->create_publisher<std_msgs::msg::Bool>("shutdown", 10);
+
+    // Create a timer to periodically check TF and publish status
+    timer_ = this->create_wall_timer(
+      500ms,  // e.g., check at 2 Hz
+      std::bind(&EndEffectorHeightChecker::timerCallback, this)
+    );
+  }
 
 private:
-    void topic_callback(const std_msgs::msg::Float64::SharedPtr msg) {
-        // Extract the z-coordinate from the message
-        double end_effector_z = msg->data;
+  void timerCallback()
+  {
+    geometry_msgs::msg::TransformStamped transform_stamped;
 
-        // Define the threshold for the end effector's z-coordinate
-        double z_threshold = 0.87 + 0.10;
-
-        if (end_effector_z < z_threshold) {
-            RCLCPP_WARN(this->get_logger(), "End effector is too low!");
-            std_msgs::msg::Bool shutdown_msg;
-            shutdown_msg.data = true;
-            publisher_->publish(shutdown_msg);
-        } else {
-            RCLCPP_INFO(this->get_logger(), "End effector height is within acceptable range.");
-        }
+    // Try to look up the transform from "base_link" to "tool0"
+    try
+    {
+      transform_stamped = tf_buffer_.lookupTransform(
+        "base_link",  // source frame
+        "tool0",      // target frame
+        tf2::TimePointZero
+      );
+    }
+    catch (const tf2::TransformException &ex)
+    {
+      RCLCPP_WARN(this->get_logger(), "Failed to get transform: %s", ex.what());
+      return;
     }
 
-    rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr subscription_;
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr publisher_;
+    // Extract the z-coordinate of the end effector
+    double end_effector_z = transform_stamped.transform.translation.z;
+    double z_threshold = 0.87 + 0.10; // For example
+
+    if (end_effector_z < z_threshold)
+    {
+      RCLCPP_WARN(this->get_logger(), "End effector is too low! Z=%.3f", end_effector_z);
+      std_msgs::msg::Bool shutdown_msg;
+      shutdown_msg.data = true;
+      shutdown_pub_->publish(shutdown_msg);
+    }
+    else
+    {
+      RCLCPP_INFO(this->get_logger(), "End effector height OK. Z=%.3f", end_effector_z);
+    }
+  }
+
+  // TF objects
+  tf2_ros::Buffer tf_buffer_;
+  tf2_ros::TransformListener tf_listener_;
+
+  // Publisher
+  rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr shutdown_pub_;
+
+  // Timer
+  rclcpp::TimerBase::SharedPtr timer_;
 };
 
-int main(int argc, char *argv[]) {
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<EndEffectorHeightChecker>();
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;  // Optional, but good practice
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<EndEffectorHeightChecker>());
+  rclcpp::shutdown();
+  return 0;
 }
 
