@@ -32,7 +32,7 @@ This project has been developed for the course **Introduction to Robotics** at t
 The move node is responsible for moving the robot in the simulation, it's written in C++ and it's responsible for computing the actual movement of the robot, while also checking the presence of singularities.
 
 ## Planning node
-The planner node is responsible for creating the enviroment, deciding where each block has to be positioned and plann the path of the robot.
+The planning node is responsible for creating the enviroment, deciding where each block has to be positioned and plann the path of the robot.
 
 ## Vision node
 The vision node is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
