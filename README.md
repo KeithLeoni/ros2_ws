@@ -30,14 +30,14 @@ This project has been developed for the course **Introduction to Robotics** at t
 ---
 
 # Documentation
-## Move node
-The move node is responsible for moving the robot in the simulation, it's written in C++ and it's responsible for computing the actual movement of the robot, while also checking the presence of singularities.
+## MOTION - motion_pkg
+The motion_pkg is responsible for moving the robot in the simulation, it's written in C++ and it's responsible for computing the actual movement of the robot, while also checking the presence of singularities.
 
-## Planning node
-The planning node handles a detection result, computes the sequence of poses for the robot to follow, and executes the planned poses while managing transformations and gripper operations.
+## HIGH-LEVEL PLANNING - planning_pkg
+The planning_pkg handles a detection result, computes the sequence of poses for the robot to follow, and executes the planned poses while managing transformations and gripper operations.
 
-## Vision node
-The vision node is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
+## VISION - pose_estimator_package 
+The pose_estimator_package is responsible for detecting the blocks in the simulation, it's written in Python and its main purpose is to detect the blocks on the table and classify them, in order to understand where to put each one, and how to pick it up.
 
 ## For more details see the report
 [Report](https://github.com/KeithLeoni/ros2_ws/blob/main/report.pdf)
