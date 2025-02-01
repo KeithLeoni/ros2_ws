@@ -1,6 +1,6 @@
 # Robotics Project
 
-[![Watch the video](https://img.youtube.com/vi/https://youtu.be/3l6ri91J9v0/sddefault.jpg)](https://youtu.be/3l6ri91J9v0)
+[![Watch the video](https://img.youtube.com/vi/3l6ri91J9v0/sddefault.jpg)](https://youtu.be/3l6ri91J9v0)
 
 
 
