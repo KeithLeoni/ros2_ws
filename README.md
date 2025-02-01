@@ -1,6 +1,6 @@
 # Robotics Project
 
-[![Watch the video](https://img.youtube.com/vi/5d4sLjeiZd0/sddefault.jpg)](https://youtu.be/5d4sLjeiZd0)
+[![Watch the video](https://img.youtube.com/vi/https://youtu.be/3l6ri91J9v0/sddefault.jpg)](https://youtu.be/3l6ri91J9v0)
 
 
 
@@ -8,6 +8,8 @@
 [Watch the video](https://www.youtube.com/watch?v=AHXESDaahys&ab_channel=LucaHardonk)
 
 [Watch the video](https://youtu.be/Xyv_HV6b0RQ)
+
+[Watch the video](https://youtu.be/5d4sLjeiZd0)
 
 ## Introduction
 This is the official repository for the **Robotics Project 2025**. The project focuses on creating code for the movement of a robotic arm and allows us to identify and manipulate block of different types, placing them in designated locations regardless of their initial pose.
